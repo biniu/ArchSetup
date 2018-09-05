@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source $(dirname "$0")/utils.sh;
+source $(dirname "$0")/config.sh;
 
 function install_oh_my_zsh {
     logger "Install oh-my-zsh" 0;
@@ -23,6 +24,7 @@ function install_vbox {
 }
 
 function install_editors {
+    logger "Install basic editors" 0
     EDITORS_LIST=(
         'emacs'
         'vim'
@@ -37,6 +39,7 @@ function install_editors {
 }
 
 function install_cmd_tools {
+    logger "Install basic cmd tools" 0
     CMD_TOOLS_LIST=(
         'mc'
         'tmux'
@@ -51,6 +54,7 @@ function install_cmd_tools {
 }
 
 function install_browers {
+    logger "Install browsers" 0
     BROWSERS_LIST=(
         'firefox'
         'chromium'
@@ -62,11 +66,13 @@ function install_browers {
 }
 
 function install_basic_dev_tools {
+    logger "Install basic dev tools" 0
     BASIC_DEV_TOOLS_LIST=(
         'git'
         'zeal'
         'gitkraken'
-        'git-flow-completion-git'
+#        'git-flow-completion-git' # - PACKAGE TO CHECK
+        'meld'
     );
 
     for pkg in "${BASIC_DEV_TOOLS_LIST[@]}"; do
@@ -75,6 +81,7 @@ function install_basic_dev_tools {
 }
 
 function install_cpp_dev_tools {
+    logger "Install basic cpp tools" 0
     CPP_DEV_LIST=(
         'gcc'
         'gdb'
@@ -98,6 +105,7 @@ function install_cpp_dev_tools {
 }
 
 function install_python_dev_tools {
+    logger "Install basic python tools" 0
     PYTHON_DEV_TOOLS=(
         'python'
         'python-pip'
@@ -124,6 +132,7 @@ function install_python_dev_tools {
 }
 
 function install_other {
+    logger "Install other packages" 0
     OTHER_LIST=(
         'dia'
         'docker'
@@ -132,6 +141,9 @@ function install_other {
         'arandr'
         'nemo'
         'otf-ipafont'    # Japanese fonts
+        'conky'
+        'i3'
+        'i3blocks'
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
@@ -139,6 +151,9 @@ function install_other {
     done
 }
 
+function sys_update {
+    logger "Update the system" 0
+}
 
 install_editors;
 install_browers;
