@@ -144,6 +144,10 @@ function install_other {
         'conky'
         'i3'
         'i3blocks'
+        'spotify'
+        'dropbox'
+        'nemo-dropbox'
+        'oomox'
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
