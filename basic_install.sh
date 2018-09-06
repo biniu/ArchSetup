@@ -159,6 +159,17 @@ function sys_update {
     logger "Update the system" 0
 }
 
+function get_emacs_config {
+    logger "Get emacs config from github" 0;
+    if (git clone https://github.com/biniu/emacsSetup.git ~/.emacs &>>LOG_FILE); then
+        logger "Configure emacs OK" 0;
+    else
+        logger "Configure emacs ERROR" 0;
+    fi
+
+}
+
+
 install_editors;
 install_browers;
 install_cmd_tools;
