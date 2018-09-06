@@ -29,7 +29,6 @@ function install_editors {
         'emacs'
         'vim'
         'atom'
-        'visual-studio-code-bin'
         'sublime-text-dev'
     );
 
@@ -148,6 +147,7 @@ function install_other {
         'dropbox'
         'nemo-dropbox'
         'oomox'
+        'gperf'         # needed by icons-in-terminal
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
