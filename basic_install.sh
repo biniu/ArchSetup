@@ -3,6 +3,11 @@
 source $(dirname "$0")/utils.sh;
 source $(dirname "$0")/config.sh;
 
+function update {
+    sudo pacman -Syyu
+    yaourt -Syu --aur
+}
+
 function install_oh_my_zsh {
     logger "Install oh-my-zsh" 0;
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
@@ -137,7 +142,6 @@ function install_other {
         'dia'
         'docker'
         'docker-compose'
-        'xmind'
         'arandr'
         'nemo'
         'otf-ipafont'    # Japanese fonts
@@ -148,6 +152,10 @@ function install_other {
         'dropbox'
         'nemo-dropbox'
         'oomox'
+        'speedcrunch'
+        'bc'
+        'epdfview'
+        'rsync'
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
@@ -176,5 +184,6 @@ install_cmd_tools;
 install_basic_dev_tools;
 install_cpp_dev_tools;
 install_python_dev_tools;
-install_oh_my_zsh;
-install_vbox;
+install_other;
+#install_oh_my_zsh;
+#install_vbox;
