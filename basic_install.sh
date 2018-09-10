@@ -145,7 +145,7 @@ function install_other {
         'nemo'
         'otf-ipafont'    # Japanese fonts
         'conky'
-        'i3'
+        'i3-gaps'
         'i3blocks'
         'spotify'
         'dropbox'
