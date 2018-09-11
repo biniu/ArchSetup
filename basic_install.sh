@@ -10,9 +10,12 @@ function update {
 
 function install_oh_my_zsh {
     logger "Install oh-my-zsh" 0;
-    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
+
+    rm -rf ~/.oh-my-zsh
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k;
-    echo "ZSH_THEME=\"powerlevel9k/powerlevel9k\"" >> ~/.zshrc;
+
+    cp zshrc ~/.zshrc
 }
 
 function install_vbox {
