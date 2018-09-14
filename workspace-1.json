@@ -1,0 +1,53 @@
+{
+    // stacked split container with 1 children
+    // "layout": "stacked",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "percent": 0.8,
+            "swallows": [
+                {
+                    "class": "^Terminator$",
+                    "instance": "^terminator$"
+                }
+            ]
+        },
+        {
+            "percent": 0.2,
+            "swallows": [
+                {
+                    "class": "^Terminator$",
+                    "instance": "^terminator$"
+                }
+            ]
+        }
+    ]
+}
+{
+    // stacked split container with 1 children
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "percent": 0.7,
+            "swallows": [
+                {
+                    "class": "^Firefox$",
+                    "instance": "^Navigator$"
+                }
+            ]
+        },
+        {
+            "percent": 0.3,
+            "swallows": [
+                {
+                    "class": "^Terminator$",
+                    "instance": "^terminator$"
+                }
+            ]
+        }
+    ]
+}
