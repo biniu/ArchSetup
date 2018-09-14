@@ -159,6 +159,8 @@ function install_other {
         'epdfview'
         'rsync'
         'gperf'         # needed by icons-in-terminal
+        'morc_menu'
+        'perl-anyevent-i3'
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
