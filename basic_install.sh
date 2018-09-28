@@ -161,6 +161,7 @@ function install_other {
         'gperf'         # needed by icons-in-terminal
         'morc_menu'
         'perl-anyevent-i3'
+        'pandoc'
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
