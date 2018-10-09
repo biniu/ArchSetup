@@ -1,4 +1,4 @@
-#!/bin/bash
+````#!/bin/bash
 
 source $(dirname "$0")/utils.sh;
 source $(dirname "$0")/config.sh;
@@ -162,6 +162,7 @@ function install_other {
         'morc_menu'
         'perl-anyevent-i3'
         'pandoc'
+        'gnome-mplayer'
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
@@ -191,5 +192,5 @@ install_basic_dev_tools;
 install_cpp_dev_tools;
 install_python_dev_tools;
 install_other;
-#install_oh_my_zsh;
-#install_vbox;
+install_oh_my_zsh;
+install_vbox;
