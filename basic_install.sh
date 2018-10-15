@@ -80,6 +80,7 @@ function install_basic_dev_tools {
         'gitkraken'
 #        'git-flow-completion-git' # - PACKAGE TO CHECK
         'meld'
+        'ctags'
     );
 
     for pkg in "${BASIC_DEV_TOOLS_LIST[@]}"; do
@@ -104,6 +105,7 @@ function install_cpp_dev_tools {
         'valgrind'
         'rats'
         'vera++'
+        'cpplint'
     );
 
     for pkg in "${CPP_DEV_LIST[@]}"; do
@@ -162,6 +164,7 @@ function install_other {
         'morc_menu'
         'perl-anyevent-i3'
         'pandoc'
+        'anki'
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
