@@ -189,13 +189,68 @@ function get_emacs_config {
 
 }
 
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
-install_editors;
-install_browers;
-install_cmd_tools;
-install_basic_dev_tools;
-install_cpp_dev_tools;
-install_python_dev_tools;
-install_other;
-install_oh_my_zsh;
-install_vbox;
+function show_help {
+  echo "Usage: $0 [option...]"
+  echo ""
+  echo "    -a               install everythink"
+  echo "    -e               install editors"
+  echo "    -b               install browsers"
+  echo "    -c               install command line tools"
+  echo "    -d               install basic dev tools"
+  echo "    -q               install C++/C tools"
+  echo "    -p               install python tools"
+  echo "    -o               install other"
+  echo "    -z               install oh-my-zsh"
+  echo "    -v               install Virtual Box"
+  echo ""
+}
+
+while getopts "h?aebcdqpozv" opt; do
+    case "$opt" in
+    h|\?)
+      show_help
+      exit 0
+      ;;
+  a)  echo "install everythink"
+      install_editors;
+      install_browers;
+      install_cmd_tools;
+      install_basic_dev_tools;
+      install_cpp_dev_tools;
+      install_python_dev_tools;
+      install_other;
+      install_oh_my_zsh;
+      install_vbox;
+      ;;
+  e)  echo "install editors"
+      install_editors;
+      ;;
+  b)  echo "install browsers"
+      install_browers;
+      ;;
+  c)  echo "install command line tools"
+      install_cmd_tools;
+      ;;
+  d)  echo "install basic dev tools"
+      install_basic_dev_tools;
+      ;;
+  q)  echo "install C++/C tools"
+      install_cpp_dev_tools;
+      ;;
+  p)  echo "install python tools"
+      install_python_dev_tools;
+      ;;
+  o)  echo "install other"
+      install_other;
+      ;;
+  z)  echo "install oh-my-zsh"
+      install_oh_my_zsh;
+      ;;
+  v)  echo "install Virtual Box"
+      install_vbox;
+      ;;
+    esac
+done
