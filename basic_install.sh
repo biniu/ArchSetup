@@ -136,7 +136,7 @@ function install_python_dev_tools {
     );
 
     for pkg in "${PIP_MODULES[@]}"; do
-        pacman_wrap "$pkg";
+        pip_wrap "$pkg";
     done
 }
 
