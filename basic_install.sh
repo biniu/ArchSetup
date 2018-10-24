@@ -1,4 +1,4 @@
-````#!/bin/bash
+#!/bin/env bash
 
 source $(dirname "$0")/utils.sh;
 source $(dirname "$0")/config.sh;
@@ -166,6 +166,8 @@ function install_other {
         'pandoc'
         'anki'
         'gnome-mplayer'
+        'filezilla'
+        'rofi'
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
