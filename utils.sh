@@ -10,11 +10,11 @@ NC='\033[0m' # No Color
 #logger FAIL    2
 function logger {
     if [ $2 == 0 ]; then
-	 printf "${1}\n"|tee -a log.txt;
+      printf "${1}\n"|tee -a log.txt;
     elif [ $2 == 1 ]; then
-	printf "${YEL}${1}${NC}\n"|tee -a log.txt
+      printf "${YEL}${1}${NC}\n"|tee -a log.txt
     elif [ $2 == 2 ]; then
-	printf "${RED}${1}${NC}\n"|tee -a log.txt
+      printf "${RED}${1}${NC}\n"|tee -a log.txt
     fi
 }
 
@@ -28,14 +28,14 @@ function pacman_wrap {
     log_break;
     if (pacman -Q "$1" &>/dev/null); then
         logger "Already installed [$1]" 0;
-	log_break;
+        log_break;
         return
     fi
 
 
     if (pacman -S "$1" --noconfirm  &>> log.txt); then
         logger "Instllation of [$1] OK" 0;
-	log_break;
+        log_break;
     else
         logger "Instllation of [$1] ERROR" 2;
         log_break;
@@ -47,13 +47,13 @@ function yaourt_wrap {
     log_break;
     if (yaourt -Q "$1" &>/dev/null); then
         logger "Already installed [$1]" 0;
-	log_break;
+        log_break;
         return
     fi
 
     if (yaourt -S "$1" --noconfirm  &>> log.txt); then
         logger "Instllation of [$1] OK" 0;
-	log_break;
+        log_break;
     else
         logger "Instllation of [$1] ERROR" 2;
         log_break;
@@ -65,13 +65,13 @@ function pip_wrap {
     log_break;
     if (pip list |grep -i "$1" &>/dev/null); then
         logger "Python module already installed [$1]" 0;
-	log_break;
+        log_break;
         return
     fi
 
     if (pip install "$1"  &>> log.txt); then
         logger "Instllation of [$1] OK" 0;
-	log_break;
+        log_break;
     else
         logger "Instllation of [$1] ERROR" 2;
         log_break;
