@@ -140,6 +140,8 @@ function install_python_dev_tools {
         'scp'
         'gitpython'
         'autopep8'
+        'importmagic'
+        'epc'
     );
 
     for pkg in "${PIP_MODULES[@]}"; do
