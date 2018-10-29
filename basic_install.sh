@@ -38,11 +38,13 @@ function install_editors {
         'vim'
         'atom'
         'sublime-text-dev'
+        'visual-studio-code-bin'
     );
 
-    for pkg in "${EDITORS_LIST[@]}"; do
-        yaourt_wrap "$pkg";
-    done
+    # for pkg in "${EDITORS_LIST[@]}"; do
+    #     yaourt_wrap "$pkg";
+    # done
+    check_if_installed_sys "${EDITORS_LIST[@]}";
 }
 
 function install_cmd_tools {
@@ -120,6 +122,7 @@ function install_python_dev_tools {
         'python-pip'
         'python2'
         'python2-pip'
+        'ipython'
     );
 
     for pkg in "${PYTHON_DEV_TOOLS[@]}"; do
@@ -133,6 +136,10 @@ function install_python_dev_tools {
         'virtualenvwrapper'
         'flake8'
         'pyflakes'
+        'paramiko'
+        'scp'
+        'gitpython'
+        'autopep8'
     );
 
     for pkg in "${PIP_MODULES[@]}"; do

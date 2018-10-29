@@ -77,3 +77,16 @@ function pip_wrap {
         log_break;
     fi
 }
+
+function check_if_installed_sys {
+  out=()
+  installed_packages=$(yaourt -Q)
+  for pkg in $@; do
+    if echo $installed_packages|grep $pkg &>/dev/null; then
+      echo "Installed $pkg"
+    else
+      echo "Not installed $pkg"
+      out+=("$pkg")
+    fi
+  done
+}
