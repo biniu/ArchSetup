@@ -142,6 +142,8 @@ function install_python_dev_tools {
         'autopep8'
         'importmagic'
         'epc'
+        'nose'
+        'rednose'
     );
 
     for pkg in "${PIP_MODULES[@]}"; do
