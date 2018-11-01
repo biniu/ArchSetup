@@ -1,5 +1,4 @@
 #!/bin/bash
-
 source $(dirname "$0")/config.sh
 
 RED='\033[0;31m' # Red
@@ -63,13 +62,13 @@ function yaourt_wrap {
 function pip_wrap {
     logger "Try to install python module [$1]" 0;
     log_break;
-    if (pip list |grep -i "$1" &>/dev/null); then
+    if (sudo pip list |grep -i "$1" &>/dev/null); then
         logger "Python module already installed [$1]" 0;
         log_break;
         return
     fi
 
-    if (pip install "$1"  &>> log.txt); then
+    if (sudo pip install "$1"  &>> log.txt); then
         logger "Instllation of [$1] OK" 0;
         log_break;
     else
