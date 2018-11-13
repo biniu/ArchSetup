@@ -144,6 +144,7 @@ function install_python_dev_tools {
         'epc'
         'nose'
         'rednose'
+        'sphinx'
     );
 
     for pkg in "${PIP_MODULES[@]}"; do
