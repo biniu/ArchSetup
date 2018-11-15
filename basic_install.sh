@@ -100,6 +100,7 @@ function install_cpp_dev_tools {
         'clang'
         'lld'
         'llvm'
+        'lldb'
         'zapcc'
         'make'
         'cmake'
