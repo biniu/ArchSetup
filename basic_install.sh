@@ -83,6 +83,8 @@ function install_basic_dev_tools {
 #        'git-flow-completion-git' # - PACKAGE TO CHECK
         'meld'
         'ctags'
+        'mongodb'
+        'mongodb-tools'
     );
 
     for pkg in "${BASIC_DEV_TOOLS_LIST[@]}"; do
