@@ -148,10 +148,7 @@ function install_python_dev_tools {
         'nose'
         'rednose'
         'sphinx'
-        'django-nonrel-enuff'
-        'djangotoolbox'
-        'django-mongodb-engine'
-        'django-mongodb-engine-py3'
+        'djongo'
     );
 
     for pkg in "${PIP_MODULES[@]}"; do
