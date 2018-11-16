@@ -149,6 +149,7 @@ function install_python_dev_tools {
         'rednose'
         'sphinx'
         'djongo'
+        'djangorestframework'
     );
 
     for pkg in "${PIP_MODULES[@]}"; do
