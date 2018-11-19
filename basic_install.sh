@@ -55,6 +55,7 @@ function install_cmd_tools {
         'terminator'
         'guake'
         'htop'
+        'ranger'
     );
 
     for pkg in "${CMD_TOOLS_LIST[@]}"; do
