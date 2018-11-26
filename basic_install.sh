@@ -186,6 +186,9 @@ function install_other {
         'gnome-mplayer'
         'filezilla'
         'rofi'
+        'ttf-font-awesome-4'
+        'otf-font-awesome-4'
+
     );
 
     for pkg in "${OTHER_LIST[@]}"; do
