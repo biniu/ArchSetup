@@ -56,6 +56,8 @@ function install_cmd_tools() {
     'guake'
     'htop'
     'ranger'
+    'nmap'
+    'task'
   )
 
   for pkg in "${CMD_TOOLS_LIST[@]}"; do
