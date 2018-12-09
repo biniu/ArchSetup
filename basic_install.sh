@@ -155,6 +155,8 @@ function install_python_dev_tools() {
     'sphinx'
     'djongo'
     'djangorestframework'
+    'django-filter'
+    'markdown'
   )
 
   for pkg in "${PIP_MODULES[@]}"; do
