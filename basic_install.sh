@@ -85,6 +85,8 @@ function install_basic_dev_tools {
         'ctags'
         'mongodb'
         'mongodb-tools'
+        'mpd'
+        'postman-bin'
     );
 
     for pkg in "${BASIC_DEV_TOOLS_LIST[@]}"; do
@@ -223,6 +225,19 @@ function show_help {
   echo "    -z               install oh-my-zsh"
   echo "    -v               install Virtual Box"
   echo ""
+}
+
+function install_fonts() {
+    # http://unifoundry.com/unifont/index.html
+    wget http://unifoundry.com/pub/unifont/unifont-11.0.02/unifont-11.0.02.tar.gz
+    tar zxvf unifont-11.0.02.tar.gz
+    cd  unifont-11.0.02
+    make
+    sudo make install
+
+    yaourt_wrap "siji-git"
+    yaourt_wrap "xorg-fonts-misc"
+
 }
 
 while getopts "h?aebcdqpozv" opt; do
