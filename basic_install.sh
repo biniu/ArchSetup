@@ -196,7 +196,8 @@ function install_other() {
     'rofi'
     'ttf-font-awesome-4'
     'otf-font-awesome-4'
-
+    'ttf-font-awesome'
+    'otf-font-awesome'
   )
 
   for pkg in "${OTHER_LIST[@]}"; do
