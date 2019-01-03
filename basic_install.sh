@@ -90,6 +90,8 @@ function install_basic_dev_tools() {
     'mongodb-tools'
     'mpd'
     'postman-bin'
+    'nodejs'
+    'npm'
   )
 
   for pkg in "${BASIC_DEV_TOOLS_LIST[@]}"; do
