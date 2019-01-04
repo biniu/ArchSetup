@@ -1,0 +1,192 @@
+
+[bar/example]
+font-0 = "FontAwesome:pixelsize=11;0"
+font-1 = "URWGothic-Book:pixelsize=11;0"
+font-2 = "Font Awesome 5 Free:pixelsize=11;0"
+font-3 = "Font Awesome 5 Free Solid:pixelsize=11;0"
+font-4 = "Font Awesome 5 Brands:pixelsize=11;0"
+
+; colors
+background = #222D31
+; foreground = #55ffff
+foreground = #ffffff
+
+; The separator will be inserted between the output of each module
+; Separator in between workspaces
+separator = | 
+separator-padding = 0
+separator-foreground = #ffb52a
+module-margin = 1
+
+bottom = true
+
+modules-right = filesystem memory cpu network xkeyboard date
+modules-left = i3
+
+
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+; mount-1 = /home
+; mount-2 = /var
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
+label-mounted = %mountpoint%: %used%% of %total% %percentage_free%%
+
+
+[module/network]
+type = internal/network
+interface = enp0s8
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+; Test connectivity every Nth update
+; A value of 0 disables the feature
+; NOTE: Experimental (needs more testing)
+; Default: 0
+;ping-interval = 3
+
+; @deprecated: Define min width using token specifiers (%downspeed:min% and %upspeed:min%)
+; Minimum output width of upload/download rate
+; Default: 3
+; udspeed-minwidth = 5
+
+; Accumulate values from all interfaces
+; when querying for up/downspeed rate
+; Default: false
+accumulate-stats = true
+
+; Consider an `UNKNOWN` interface state as up.
+; Some devices have an unknown state, even when they're running
+; Default: false
+unknown-as-up = false
+
+label-connected = "%ifname%: %local_ip%    U%upspeed:4%    D%downspeed:4%"
+
+
+
+
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+label-layout = %layout%
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %%{F#99}%m/%d/%Y%%{F-}  %%{F#fff}%I:%M %p%{F-}
+date-alt = %%{F#fff}%A, %B %d, %Y  %%{F#fff}%I:%M %p%{F#666}%%{F#fba922}%S%%{F-}
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+format-prefix = " "
+label-layout = %percentage%
+
+[module/memory]
+type = internal/memory
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3
+
+label = " %gb_used%/%gb_total%"
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-default = ♟
+
+label-dimmed-underline = ${root.background}
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 0
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused =  "%icon%"
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = "%name%: %icon%"
+label-unfocused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = "%name%: %icon%"
+label-visible-underline = #555555
+label-visible-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = "%name%: %icon%"
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 4
