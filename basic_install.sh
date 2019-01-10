@@ -198,6 +198,7 @@ function install_other() {
     'otf-font-awesome-4'
     'ttf-font-awesome'
     'otf-font-awesome'
+    'nerd-fonts-complete'
   )
 
   for pkg in "${OTHER_LIST[@]}"; do
