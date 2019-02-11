@@ -422,6 +422,8 @@ mode "$mode_gaps_outer" {
 
 for_window [class="Yad"] floating enable
 
+#exec --no-startup-id i3-msg 'workspace 5; exec chromium; workspace 1' 
+
 exec_always --no-startup-id  ~/.config/polybar/launch.sh
 exec dropbox
 exec guake
