@@ -41,10 +41,10 @@ function install_editors() {
     'visual-studio-code-bin'
   )
 
-  # for pkg in "${EDITORS_LIST[@]}"; do
-  #     yaourt_wrap "$pkg";
-  # done
-  check_if_installed_sys "${EDITORS_LIST[@]}"
+  for pkg in "${EDITORS_LIST[@]}"; do
+      yaourt_wrap "$pkg";
+  done
+  # check_if_installed_sys "${EDITORS_LIST[@]}"
 }
 
 function install_cmd_tools() {
@@ -86,8 +86,8 @@ function install_basic_dev_tools() {
     #        'git-flow-completion-git' # - PACKAGE TO CHECK
     'meld'
     'ctags'
-    'mongodb'
-    'mongodb-tools'
+    # 'mongodb'
+    # 'mongodb-tools'
     'mpd'
     'postman-bin'
     'nodejs'
@@ -199,6 +199,9 @@ function install_other() {
     'ttf-font-awesome'
     'otf-font-awesome'
     'nerd-fonts-complete'
+    'pagraphcontrol-git'
+    'pavucontrol'
+    'paprefs'
   )
 
   for pkg in "${OTHER_LIST[@]}"; do
