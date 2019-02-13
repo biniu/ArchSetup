@@ -249,7 +249,7 @@ while getopts "h?aebcdqpozv" opt; do
     exit 0
     ;;
   a)
-    echo "install everythink"
+    echo "install everything"
     install_editors
     install_browers
     install_cmd_tools
