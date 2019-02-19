@@ -102,7 +102,7 @@ font-2 = "Noto Sans:size=9;0"
 font-3 = "Noto Sans Mono:size=9;0"
 
 modules-left = i3 xwindow
-modules-center = spotify1 kernel
+modules-center = emacs_pomodoro
 modules-right = filesystem memory cpu date
 
 separator = |
@@ -375,6 +375,16 @@ format-background = ${colors.background}
 label = %date%
 ;%time%
 
+
+#################################################################
+
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/scripts/popup-calendar.sh
+interval = 5
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup
+; click-right = /popup-calendar.sh --popup
+
 #################################################################
 
 [module/filesystem]
@@ -419,7 +429,7 @@ format-mounted-underline = #fe0000
 ;   %free%
 ;   %used%
 ; Default: %mountpoint% %percentage_free%%
-label-mounted = %mountpoint% : %used% used of %total%
+label-mounted = %mountpoint% : %free% / %total%
 
 ; Available tokens:
 ;   %mountpoint%
@@ -479,6 +489,29 @@ accumulate-stats = true
 unknown-as-up = false
 
 label-connected = "%ifname%: %local_ip%    U%upspeed:4%    D%downspeed:4%"
+
+################################################################################
+
+[module/emacs_pomodoro]
+
+type = custom/script
+exec = ~/.config/polybar/scripts/pomodoro_emacs.sh
+; exec = ./scripts/pomodoro_emacs.sh
+; exec = ~/.config/polybar/scripts/spotify1.sh
+interval = 10
+
+;format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 2
+format-underline = #0f0
+;format-prefix = "  "
+format-prefix-foreground = #0f0
+label = %output:0:150%
+
+
+
+
 
 
 
