@@ -1,0 +1,54 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "name": "biniu@manjarodev: ~",
+    "percent": 0.4,
+    "swallows": [
+       {
+       "class": "^Terminator$",
+       "instance": "^terminator$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.6,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "name": "i3: Layout saving in i3 - Mozilla Firefox",
+            "percent": 0.7,
+            "swallows": [
+               {
+               "class": "^Firefox$",
+               "instance": "^Navigator$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "name": "htop",
+            "percent": 0.3,
+            "swallows": [
+               {
+               "class": "^Terminator$",
+               "instance": "^terminator$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
