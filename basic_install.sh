@@ -159,6 +159,7 @@ function install_python_dev_tools() {
     'djangorestframework'
     'django-filter'
     'markdown'
+    'magic-import'
   )
 
   for pkg in "${PIP_MODULES[@]}"; do
