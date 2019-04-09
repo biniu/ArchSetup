@@ -203,6 +203,7 @@ function install_other() {
     'pagraphcontrol-git'
     'pavucontrol'
     'paprefs'
+    'feh'
   )
 
   for pkg in "${OTHER_LIST[@]}"; do
