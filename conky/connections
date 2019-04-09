@@ -1,0 +1,41 @@
+conky.config = {
+-- this file goes in ~
+    background = false,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=7',
+    xftalpha = 1,
+    total_run_times = 0,
+    
+    own_window = true,
+    own_window_type = 'override',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+    double_buffer = true,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    border_width = 0,
+    default_color = 'cyan',
+    default_shade_color = 'black',
+    default_outline_color = 'white',
+    alignment = 'top_left',
+    cpu_avg_samples = 10,
+    override_utf8_locale = true,
+    text_buffer_size = 2048,
+
+    minimum_width = 600, minimum_height = 200,
+    maximum_width = 600,
+
+    gap_x = 2230,
+    gap_y = 10,
+
+};
+
+conky.text = [[
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+ ┌─────────────┐
+┌┤  TCP / TOR  │  TODO - ADD PROCESS NAME, ALIGNMENT TO LEFT
+│└─────────────┘
+${execi 15 ss -ta|grep -e "ESTAB" -e "9050"|tail -n 8|sed 's/^/├─/' | sed 's/.$/─┤/'|awk '{$1=$1}1' OFS="    "}
+]];
