@@ -2,7 +2,7 @@ conky.config = {
 -- this file goes in ~
 	background = false,
 	use_xft = true,
-	font = 'DejaVu Sans Mono:size=8',
+	font = 'DejaVu Sans Mono:size=10',
 	xftalpha = 1,
 	total_run_times = 0,
 
@@ -25,8 +25,8 @@ conky.config = {
 	color2 = '#DC143C',
 
     alignment = 'top_left',
-    gap_x = 2900,
-    gap_y = 600,
+    gap_x = 00,
+    gap_y = 880,
 };
 
 conky.text = [[
@@ -36,7 +36,7 @@ conky.text = [[
 ││ TODO - volume level │
 │└─────────┬───────────┘
 ├─ Status: ${mpd_status} / Volume: ${mpd_vol}% / ${exec amixer get Master | grep "Front Left:" | awk '{print $5}'}
-${execpi 1 sh ./spotify.sh}
+${execpi 1 sh $SCRIPT_PATH/spotify.sh}
 #├─ Artist: ${mpd_artist}
 #├─ Title : ${mpd_title}
 #├─ Album : ${mpd_album}

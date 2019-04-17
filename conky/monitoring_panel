@@ -5,11 +5,11 @@ conky.config = {
     alignment = 'top_left',
     background = true,
     use_xft = true,
-    font = 'DejaVu Sans Mono:size=7',
+    font = 'DejaVu Sans Mono:size=9',
 
-    gap_x = 1930,
-    gap_y = 13,
-  
+    gap_x = 0,
+    gap_y = 10,
+
     cpu_avg_samples = 2,
     net_avg_samples = 2,
 
@@ -21,7 +21,7 @@ conky.config = {
     own_window_type = 'override',
     own_window_transparent = true,
     own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
-    
+
     update_interval = 1.0,
 
     default_color = 'cyan',
@@ -31,14 +31,14 @@ conky.config = {
 
 conky.text = [[
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
-${voffset -10}${font DejaVu Sans:pixelsize=30}${color2}biniu${color}OS${font} 
-              ▲   
+${voffset -10}${font DejaVu Sans:pixelsize=30}${color2}biniu${color}OS${font}
+              ▲
 ┌─────────────┘
-│  
+│
 ├─ ${nodename}
-│   ├─ kernel $font ${color2} [${color}${color}${exec uname -r | cut -c 1-14}${color2}]${color1}  
-│   ├─ arch $font ${color2}   [${color1}$machine${color2}]${color1}  
-│   └─ uptime $font ${color2} [${color1}$uptime${color2}]${color1}  
+│   ├─ kernel $font ${color2} [${color}${color}${exec uname -r | cut -c 1-14}${color2}]${color1}
+│   ├─ arch $font ${color2}   [${color1}$machine${color2}]${color1}
+│   └─ uptime $font ${color2} [${color1}$uptime${color2}]${color1}
 │
 ├─ system
 │   ├─ CPU
@@ -57,15 +57,15 @@ ${voffset -10}${font DejaVu Sans:pixelsize=30}${color2}biniu${color}OS${font}
 │   ├─processes
 │   │   ├─${color} total   ${color2}[${color}$processes${color2}]${color1}
 │   │   └─${color} running ${color2}[${color}$running_processes${color2}  ]${color1}
-│   └─temperature
-│       ├─${color} tmp1 ${color2}[${color}${exec sensors | grep -m 1 temp1 | cut -c 16-17}${color2}]${color1}
-│       └─${color} tmp2 ${color2}[${color}${exec sensors | grep -m 1 temp2 | cut -c 16-17}${color2}]${color1}
+│   └─temperature CPU
+│       ├─${color} Core 0 ${color2}[${color}${exec sensors|grep -m 1 "Core 0"| cut -c 17-18}${color2}]${color1}    ${color} Core 1 ${color2}[${color}${exec sensors|grep -m 1 "Core 1"| cut -c 17-18}${color2}]${color1}
+│       └─${color} Core 2 ${color2}[${color}${exec sensors|grep -m 1 "Core 2"| cut -c 17-18}${color2}]${color1}    ${color} Core 3 ${color2}[${color}${exec sensors|grep -m 1 "Core 3"| cut -c 17-18}${color2}]${color1}
 │
 ├─ resources
 │   ├─ read  ${color2}[${color} $diskio_read ${color2}]${color}
 │   ├─ write ${color2}[${color} $diskio_write ${color2}]${color}
 │   ├─ RAM
-│   │   ├─ used ${color2}[${color} $memperc% ${color2}]${color} 
+│   │   ├─ used ${color2}[${color} $memperc% ${color2}]${color}
 │   │   │  └─   ${color2}[${color} $mem/$memmax ${color2}]${color}
 │   │   ├─ ${color2}[${color} ${top_mem name 1}  ${top_mem mem 1} ${color2}]${color}
 │   │   ├─ ${color2}[${color} ${top_mem name 2}  ${top_mem mem 2} ${color2}]${color}
@@ -75,16 +75,16 @@ ${voffset -10}${font DejaVu Sans:pixelsize=30}${color2}biniu${color}OS${font}
 │   ├─ swap ${color2}[${color} $swapperc% - $swap/$swapmax ${color2}]${color}
 │   │   └─  ${color2}[${color} ${swapbar 5,120} ${color2}]${color}
 │   ├─ root ${color2}[${color} ${fs_used /}/${fs_size /} ${color2}]${color}
-│   │   └─  ${color2}[${color} ${fs_bar 5,120 /} ${color2}]${color} 
-│   └─ home ${color2}[${color} ${fs_used /home}/${fs_size /home} ${color2}]${color}  
-│       └─  ${color2}[${color} ${fs_bar 5,120 /home/$USER/} ${color2}]${color}  
+│   │   └─  ${color2}[${color} ${fs_bar 5,120 /} ${color2}]${color}
+│   └─ home ${color2}[${color} ${fs_used /home}/${fs_size /home} ${color2}]${color}
+│       └─  ${color2}[${color} ${fs_bar 5,120 /home/$USER/} ${color2}]${color}
 │
 └─ net
-  ├─ connections  ${color2}[${color} ${tcp_portmon 1 65535 count} ${color2}]${color} 
-  ├─ in  / locale ${color2}[${color} ${tcp_portmon 1 32767 count} ${color2}]${color} 
+  ├─ connections  ${color2}[${color} ${tcp_portmon 1 65535 count} ${color2}]${color}
+  ├─ in  / locale ${color2}[${color} ${tcp_portmon 1 32767 count} ${color2}]${color}
   ├─ out / remote ${color2}[${color} ${tcp_portmon 32768 61000 count} ${color2}]${color}
   ├─ up   ${color2}[${color} ${upspeed enp3s0} k/s ${color2}]${color}
   │   └─ ${color2}${color} ${upspeedgraph enp3s0 8,120 DC143C DC143C} ${color1}${color}
   └─ down ${color2}[${color} ${downspeed enp3s0} k/s ${color2}]${color}
-      └─ ${color1}${color} ${downspeedgraph enp3s0 8,120 DC143C DC143C} ${color1}${color} 
+      └─ ${color1}${color} ${downspeedgraph enp3s0 8,120 DC143C DC143C} ${color1}${color}
 ]]

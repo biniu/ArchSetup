@@ -2,7 +2,7 @@ conky.config = {
 -- this file goes in ~
     background = false,
     use_xft = true,
-    font = 'DejaVu Sans Mono:size=7',
+    font = 'DejaVu Sans Mono:size=9',
     xftalpha = 1,
     total_run_times = 0,
 
@@ -33,16 +33,16 @@ conky.config = {
     color3 = '#FFFF00',
 
     alignment = 'top_left',
-    gap_x = 3160,
-    gap_y = 155,
+    gap_x = 1780,
+    gap_y = 170,
 
 };
 
 conky.text = [[
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
-        ┌──────────┐            
+        ┌──────────┐
 ●───────┤ CALENDAR │
-        └───┬──────┘             
+        └───┬──────┘
 #${execpi 60 cal_var=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$cal_var"'\b'/'\1${color2}'"$cal_var"'${color}'/}
-${execpi 60 sh ./calendar.sh}
+${execpi 60 sh $SCRIPT_PATH/calendar.sh}
 ]];

@@ -1,43 +1,39 @@
 conky.config = {
---#####################
--- - Conky settings - #
---#####################
+
     update_interval = 1,
     total_run_times = 0,
     net_avg_samples = 1,
     cpu_avg_samples = 1,
 
-    double_buffer = true,
-    no_buffers = true,
 
---####################
--- - Text settings - #
---####################
+    font = 'Dinreg:pixelsize=15',
+
+
+    background = false,
     use_xft = true,
-    font = 'Dinreg:pixelsize=10',
-    override_utf8_locale = true,
 
---############################
--- - Window specifications - #
---############################
-    own_window_class = 'Conky',
+    xftalpha = 1,
+    total_run_times = 0,
+
     own_window = true,
     own_window_type = 'override',
     own_window_transparent = true,
     own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
---own_window_argb_visual yes
---own_window_argb_value 100
 
-    alignment = 'top_left',
-    gap_x = 3160,
-    gap_y = 1,
-
---########################
--- - Graphics settings - #
---########################
+    double_buffer = true,
     draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = true,
+    stippled_borders = 0,
+    default_color = 'cyan',
+    default_shade_color = 'black',
+    default_outline_color = 'white',
+    no_buffers = true,
 
---default_color BDB5A1
+    override_utf8_locale = true,
+    use_spacer = 'no',
+
     default_color = 'cyan',
     default_shade_color = '#1d1d1d',
     color0 = '#ffffff',
@@ -45,8 +41,12 @@ conky.config = {
     color2 = 'cyan',
     color3 = '#DC143C',
 
-    maximum_height = 200,
+    maximum_height = 150,
     maximum_width = 200,
+
+    alignment = 'top_left',
+    gap_x = 1800,
+    gap_y = 10,
 };
 
 conky.text = [[

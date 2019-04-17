@@ -2,7 +2,7 @@ conky.config = {
 -- this file goes in ~
     background = false,
     use_xft = true,
-    font = 'DejaVu Sans Mono:size=7',
+    font = 'DejaVu Sans Mono:size=9',
     xftalpha = 1,
     total_run_times = 0,
 
@@ -26,11 +26,11 @@ conky.config = {
     cpu_avg_samples = 10,
     override_utf8_locale = true,
 
-    minimum_width = 500,
-    maximum_width = 480,
+    minimum_width = 400,
+    maximum_width = 580,
 
-    gap_x = 2230,
-    gap_y = 500,
+    gap_x = 430,
+    gap_y = 750,
 
 };
 
