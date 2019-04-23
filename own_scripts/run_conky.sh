@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# ps aux|grep conky|xargs kill
-# sleep 0.5
+killall -q conky
 
 if [ "$1" = '-d' ]; then
     echo "Debug mode"
