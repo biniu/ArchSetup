@@ -32,11 +32,12 @@ conky -c "$CONF_PATH/conky_spotify"        2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/clock"                2>/dev/null &
 sleep 0.1
+conky -c "$CONF_PATH/conky_update"         2>/dev/null &
+sleep 0.1
 # TODO(biniu) scripts to do
 # gmail
 # weather
 # system logs
-# package to update
 # TODO list
 # calendar agenda
 # NETWORK
