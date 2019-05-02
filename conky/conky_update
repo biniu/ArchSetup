@@ -20,7 +20,7 @@ conky.config = {
     own_window_transparent = true,
     own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
-    update_interval = 1.0,
+    update_interval = 10,
 
     default_color = 'cyan',
     color1 = 'cyan',
