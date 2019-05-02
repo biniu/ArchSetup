@@ -20,8 +20,7 @@ fi
 echo "$CONF_PATH"
 
 
-conky -c "$CONF_PATH/conky_calendar"       2>/dev/null &
-sleep 0.1
+sleep 0.5
 conky -c "$CONF_PATH/connections"          2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/monitoring_panel"     2>/dev/null &
@@ -30,9 +29,13 @@ conky -c "$CONF_PATH/conky_rss"            2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/conky_spotify"        2>/dev/null &
 sleep 0.1
+conky -c "$CONF_PATH/conky_calendar"       2>/dev/null &
+sleep 0.1
 conky -c "$CONF_PATH/clock"                2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/conky_update"         2>/dev/null &
+sleep 0.1
+conky -c "$CONF_PATH/conky_net_speed"      2>/dev/null &
 sleep 0.1
 # TODO(biniu) scripts to do
 # gmail
