@@ -1,0 +1,6 @@
+
+* lsp servers
+** python server
+   sudo pip install python-language-server
+** html server
+   npm install -g vscode-html-languageserver-bin
