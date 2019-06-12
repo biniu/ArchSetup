@@ -36,20 +36,22 @@ function pacman_wrap() {
     log_break
   else
     logger "Instllation of [$1] ERROR" 2
+    logger "Try AUR" 0
+    pacaur_wrap $1
     log_break
   fi
 }
 
-function yaourt_wrap() {
+function pacaur_wrap() {
   logger "Try to install [$1]" 0
   log_break
-  if (yaourt -Q "$1" &>/dev/null); then
+  if (pacaur -Q "$1" &>/dev/null); then
     logger "Already installed [$1]" 0
     log_break
     return
   fi
 
-  if (yaourt -S "$1" --noconfirm &>>log.txt); then
+  if (pacaur -S "$1" --noconfirm &>>log.txt); then
     logger "Instllation of [$1] OK" 0
     log_break
   else

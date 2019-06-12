@@ -20,9 +20,9 @@ function install_oh_my_zsh() {
 
 function install_vbox() {
   logger "Install Virtual Box" 0
-  yaourt_wrap virtualbox
-  yaourt_wrap virtualbox-host-modules-archl
-  yaourt_wrap linux-headers
+  pacman_wrap virtualbox
+  pacman_wrap virtualbox-host-modules-archl
+  pacman_wrap linux-headers
 
   logger "Enable vbox kernel modules" 0
   modprobe vboxdrv
@@ -42,7 +42,7 @@ function install_editors() {
   )
 
   for pkg in "${EDITORS_LIST[@]}"; do
-      yaourt_wrap "$pkg";
+      pacman_wrap "$pkg";
   done
   # check_if_installed_sys "${EDITORS_LIST[@]}"
 }
@@ -61,7 +61,7 @@ function install_cmd_tools() {
   )
 
   for pkg in "${CMD_TOOLS_LIST[@]}"; do
-    yaourt_wrap "$pkg"
+    pacman_wrap "$pkg"
   done
 }
 
@@ -73,7 +73,7 @@ function install_browers() {
   )
 
   for pkg in "${BROWSERS_LIST[@]}"; do
-    yaourt_wrap "$pkg"
+    pacman_wrap "$pkg"
   done
 }
 
@@ -95,7 +95,7 @@ function install_basic_dev_tools() {
   )
 
   for pkg in "${BASIC_DEV_TOOLS_LIST[@]}"; do
-    yaourt_wrap "$pkg"
+    pacman_wrap "$pkg"
   done
 }
 
@@ -108,7 +108,7 @@ function install_cpp_dev_tools() {
     'lld'
     'llvm'
     'lldb'
-    'zapcc'
+    # 'zapcc'
     'make'
     'cmake'
     'boost'
@@ -121,7 +121,7 @@ function install_cpp_dev_tools() {
   )
 
   for pkg in "${CPP_DEV_LIST[@]}"; do
-    yaourt_wrap "$pkg"
+    pacman_wrap "$pkg"
   done
 }
 
@@ -136,7 +136,7 @@ function install_python_dev_tools() {
   )
 
   for pkg in "${PYTHON_DEV_TOOLS[@]}"; do
-    yaourt_wrap "$pkg"
+    pacman_wrap "$pkg"
   done
 
   PIP_MODULES=(
@@ -207,7 +207,7 @@ function install_other() {
   )
 
   for pkg in "${OTHER_LIST[@]}"; do
-    yaourt_wrap "$pkg"
+    pacman_wrap "$pkg"
   done
 }
 
