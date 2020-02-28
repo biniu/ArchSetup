@@ -2,6 +2,8 @@
 
 killall -q conky
 
+echo "aaaa" >> ~/.aa
+
 if [ "$1" = '-d' ]; then
     echo "Debug mode"
     echo "Using relative paths"
@@ -36,6 +38,8 @@ sleep 0.1
 conky -c "$CONF_PATH/conky_update"         2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/conky_net_speed"      2>/dev/null &
+sleep 0.1
+conky -c "$CONF_PATH/conky_journalctl"      2>/dev/null &
 sleep 0.1
 # TODO(biniu) scripts to do
 # gmail

@@ -6,7 +6,7 @@ conky.config = {
     font = 'DejaVu Sans Mono:size=9',
 
     gap_x = 1500,
-    gap_y = 10,
+    gap_y = 40,
 
     cpu_avg_samples = 2,
     net_avg_samples = 2,

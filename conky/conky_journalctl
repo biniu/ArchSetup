@@ -5,8 +5,11 @@ conky.config = {
     use_xft = true,
     font = 'DejaVu Sans Mono:size=9',
 
-    gap_x = 1340,
-    gap_y = 40,
+    minimum_width = 400,
+    maximum_width = 680,
+
+    gap_x = 1240,
+    gap_y = 770,
 
     cpu_avg_samples = 2,
     net_avg_samples = 2,
@@ -28,10 +31,9 @@ conky.config = {
 };
 
 conky.text = [[
-┌───────────────┐
-│ SPEEDTEST.NET │
-└───────────────┘
-${texeci 25600 speedtest --simple --server 3009 > $CONF_PATH/.speeds 2>&1}
-${exec cat $CONF_PATH/.speeds}
-
-]]
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌│├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+┌────────────┐
+│ JOURNALCTL │
+├────────────┘
+${exec journalctl -n 10 --no-pager|sed 's/^/├─ /'|awk '{$1=$1}1'}
+]];

@@ -29,7 +29,7 @@ conky.config = {
     maximum_width = 600,
 
     gap_x = 430,
-    gap_y = 10,
+    gap_y = 40,
 
 };
 
