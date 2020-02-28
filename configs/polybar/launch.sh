@@ -28,6 +28,17 @@ case $desktop in
         polybar --reload mainbar-i3 -c ./config &
     fi
     ;;
+    plasma-i3)
+    if type "xrandr" > /dev/null; then
+      for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+          # MONITOR=$m polybar --reload mainbar-i3 -c ~/.config/polybar/config &
+          MONITOR=$m polybar --reload mainbar-i3 -c ./config &
+      done
+    else
+        # polybar --reload mainbar-i3 -c ~/.config/polybar/config &
+        polybar --reload mainbar-i3 -c ./config &
+    fi
+    ;;
     openbox)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
