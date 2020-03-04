@@ -2,27 +2,31 @@
 
 killall -q conky
 
-echo "aaaa" >> ~/.aa
 
 if [ "$1" = '-d' ]; then
     echo "Debug mode"
     echo "Using relative paths"
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
     CONF_PATH="$DIR/../conky"
+    SCRIPT_PATH="$DIR"
     export CONF_PATH="$DIR/../conky"
     export SCRIPT_PATH="$DIR"
 else
-    CONF_PATH="$HOME/.config/conky"
+    CONF_PATH="$HOME/.config/conky/"
+    SCRIPT_PATH="$HOME/.config/run_scripts/"
     export CONF_PATH="$HOME/.config/conky"
     # TODO(biniu) set for some CONST
-    # expot SCRIPT_PATH="$DIR"
+    export SCRIPT_PATH="$HOME/.config/run_scripts/"
 fi
 
 
 echo "$CONF_PATH"
+echo "$SCRIPT_PATH"
 
 
 sleep 0.5
+conky -c "$CONF_PATH/conky_calendar"       2>/dev/null &
+sleep 0.1
 conky -c "$CONF_PATH/connections"          2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/monitoring_panel"     2>/dev/null &
@@ -31,8 +35,6 @@ conky -c "$CONF_PATH/conky_rss"            2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/conky_spotify"        2>/dev/null &
 sleep 0.1
-conky -c "$CONF_PATH/conky_calendar"       2>/dev/null &
-sleep 0.1
 conky -c "$CONF_PATH/clock"                2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/conky_update"         2>/dev/null &
@@ -40,6 +42,8 @@ sleep 0.1
 conky -c "$CONF_PATH/conky_net_speed"      2>/dev/null &
 sleep 0.1
 conky -c "$CONF_PATH/conky_journalctl"      2>/dev/null &
+sleep 0.1
+conky -c "$CONF_PATH/conky_task"      2>/dev/null &
 sleep 0.1
 # TODO(biniu) scripts to do
 # gmail

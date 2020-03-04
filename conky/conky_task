@@ -1,0 +1,40 @@
+conky.config = {
+
+    alignment = 'top_left',
+    background = true,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=9',
+
+    minimum_width = 400,
+    maximum_width = 680,
+
+    gap_x = 1240,
+    gap_y = 200,
+
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+
+    double_buffer = true,
+    draw_shades = false,
+
+    no_buffers = true,
+    own_window = true,
+    own_window_type = 'override',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+    update_interval = 10,
+
+
+    default_color = 'cyan',
+    color1 = 'cyan',
+    color2 = 'red',
+
+};
+
+conky.text = [[
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌│├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+${execpi 60 python $SCRIPT_PATH/task_for_conky.py}
+#${execpi 60 echo '${color2}'aaa}
+
+]];
